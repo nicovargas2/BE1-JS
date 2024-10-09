@@ -18,6 +18,3 @@ app.use('/api/carts', cartsRouter);
 app.listen(config.PORT, () => {
     console.log(`Server running using port: ${config.PORT}`)
 });
-
-
-
