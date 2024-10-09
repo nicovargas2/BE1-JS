@@ -1,0 +1,45 @@
+[
+    {
+        "id": 1,
+        "products": [
+            {
+                "product": 101,
+                "quantity": 1
+            },
+            {
+                "product": 102,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "products": [
+            {
+                "product": 103,
+                "quantity": 3
+            },
+            {
+                "product": 104,
+                "quantity": 4
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "products": [
+            {
+                "productId": 999,
+                "title": "Producto Z",
+                "price": 9.57,
+                "quantity": 10
+            },
+            {
+                "productId": 998,
+                "title": "Producto ZZ",
+                "price": 409.16,
+                "quantity": 1
+            }
+        ]
+    }
+]
