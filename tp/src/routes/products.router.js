@@ -62,7 +62,7 @@ router.put('/:pid', (req, res) => {
         if (req.body.hasOwnProperty('title') && req.body.title != '') {
             products[index].title = req.body.title;
         }
-        //: "largo fino", : "abcd1", price: 101.54, status: true, stock: 93, : "No perecedero"
+
         if (req.body.hasOwnProperty('description') && req.body.description != '') {
             products[index].description = req.body.description;
         }
