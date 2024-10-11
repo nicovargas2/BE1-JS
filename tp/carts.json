@@ -9,6 +9,14 @@
             {
                 "product": 102,
                 "quantity": 2
+            },
+            {
+                "product": 1,
+                "quantity": 14
+            },
+            {
+                "product": 12,
+                "quantity": 2
             }
         ]
     },
@@ -29,16 +37,46 @@
         "id": 3,
         "products": [
             {
-                "productId": 999,
-                "title": "Producto Z",
-                "price": 9.57,
-                "quantity": 10
+                "productId": 103,
+                "title": "Producto C",
+                "price": 109.45,
+                "quantity": 1
             },
             {
-                "productId": 998,
-                "title": "Producto ZZ",
-                "price": 409.16,
+                "productId": 104,
+                "title": "Producto D",
+                "price": 40.65,
                 "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "products": [
+            {
+                "productId": 777,
+                "quantity": 1
+            },
+            {
+                "productId": 999,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "products": [
+            {
+                "productId": 777,
+                "quantity": 1
+            },
+            {
+                "productId": 999,
+                "quantity": 1
+            },
+            {
+                "product": 1,
+                "quantity": 2
             }
         ]
     }
