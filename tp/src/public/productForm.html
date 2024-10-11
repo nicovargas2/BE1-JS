@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP1</title>
+</head>
+
+<body>
+    <h1><u>Crear producto</u></h1>
+    <form action="/api/products" method="post" enctype="multipart/form-data">
+        <input type="text" name="title" id="title" placeholder="title">
+        <br>
+        <input type="text" name="description" id="description" placeholder="description">
+        <br>
+        <input type="text" name="code" id="code" placeholder="code">
+        <br>
+        <input type="number" name="price" id="price" placeholder="price">
+        <br>
+        <input type="number" name="stock" id="stock" placeholder="stock">
+        <br>
+        <input type="text" name="category" id="category" placeholder="category">
+        <br>
+        <input type="file" id="thumbnail" name="thumbnail">
+        <br />
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>

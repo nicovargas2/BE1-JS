@@ -1,1 +1,67 @@
-[{"id":3,"title":"fideo","description":"moñito","code":"ajnh3","price":122.35,"status":true,"stock":3,"category":"No perecedero","thumbnails":[]},{"id":4,"title":"leche","description":"Descremada","code":"aoki2","price":99.78,"status":true,"stock":54,"category":"Perecedero","thumbnails":[]},{"id":5,"title":"pan","description":"pan de salvado con semillas","code":"qd12e","price":154.5,"status":true,"stock":23,"category":"Perecedero","thumbnails":[]}]
+[
+    {
+        "id": 1,
+        "title": "arroz",
+        "description": "largo fino",
+        "code": "abcd1",
+        "price": 101.54,
+        "status": true,
+        "stock": 93,
+        "category": "No perecedero",
+        "thumbnails": []
+    },
+    {
+        "id": 2,
+        "title": "polenta",
+        "description": "comun",
+        "code": "abcd2",
+        "price": 121.15,
+        "status": true,
+        "stock": 43,
+        "category": "No perecedero",
+        "thumbnails": []
+    },
+    {
+        "id": 3,
+        "title": "fideo",
+        "description": "moñito",
+        "code": "ajnh3",
+        "price": 122.35,
+        "status": true,
+        "stock": 3,
+        "category": "No perecedero",
+        "thumbnails": []
+    },
+    {
+        "id": 4,
+        "title": "leche",
+        "description": "Descremada",
+        "code": "aoki2",
+        "price": 99.78,
+        "status": true,
+        "stock": 54,
+        "category": "Perecedero",
+        "thumbnails": []
+    },
+    {
+        "id": 5,
+        "title": "pan",
+        "description": "pan de salvado con semillas",
+        "code": "qd12e",
+        "price": 154.5,
+        "status": true,
+        "stock": 23,
+        "category": "Perecedero",
+        "thumbnails": []
+    },
+    {
+        "id": 6,
+        "title": "fideos mostachol",
+        "description": "Marolio",
+        "code": "232r3wd",
+        "price": 2,
+        "status": true,
+        "stock": 222,
+        "category": "cat"
+    }
+]
