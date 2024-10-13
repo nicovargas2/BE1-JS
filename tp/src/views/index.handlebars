@@ -1,0 +1,12 @@
+<div>
+    <h1>Hola {{fName}}, {{lName}} bienvenido al sistema!</h1>
+
+    {{#if isAdmin}}
+    <ul>
+        {{#each products}}
+        <li>{{this.id}} - {{this.title}}, {{this.description}}, ${{this.price}}, {{this.stock}},
+            {{this.category}}</li>
+        {{/each}}
+    </ul>
+    {{/if}}
+</div>
