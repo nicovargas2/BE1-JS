@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
         //products: products
         products
     };
-    res.status(200).render('index', data);
+    res.status(200).render('home', data);
 })
 
 export default router;
