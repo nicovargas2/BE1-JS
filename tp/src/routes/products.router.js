@@ -16,7 +16,8 @@ const auth = (req, res, next) => {
 }
 
 const middVerifyProductBody = (req, res, next) => {
-    if (req.body.hasOwnProperty('title') && req.body.hasOwnProperty('description') && req.body.hasOwnProperty('code') && req.body.hasOwnProperty('price') && req.body.hasOwnProperty('stock') && req.body.hasOwnProperty('category')) {
+    console.log(req.body)
+    if (req.body.title != '' && req.body.description != '' && req.body.price > 0 && req.body.stock > 0) {
         next();
     } else {
         res.status(400).send({ error: 'Faltan campos obligatorios', data: [] });
@@ -27,7 +28,7 @@ const products = [
     { id: 2, title: "polenta", description: "comun", code: "abcd2", price: 121.15, status: true, stock: 43, category: "No perecedero", thumbnails: [] },
     { id: 3, title: "fideo", description: "moñito", code: "ajnh3", price: 122.35, status: true, stock: 3, category: "No perecedero", thumbnails: [] },
     { id: 4, title: "leche", description: "Descremada", code: "aoki2", price: 99.78, status: true, stock: 54, category: "Perecedero", thumbnails: [] },
-    { id: 5, title: "pan", description: "pan de salvado con semillas", code: "qd12e", price: 154.5, status: true, stock: 23, category: "Perecedero", thumbnails: [] },
+    { id: 5, title: "pannnnn", description: "pan de salvado con semillas", code: "qd12e", price: 154.5, status: true, stock: 23, category: "Perecedero", thumbnails: [] },
 ]
 
 function saveProducts() {
@@ -59,7 +60,7 @@ router.get('/:pid', (req, res) => {
 })
 
 //middleware activos a nivel de endpoint(puedo poner mas, se ejecutan antes de lo que está dentro)
-router.post('/', auth, middVerifyProductBody, uploader.single('thumbnail'), (req, res) => {
+router.post('/', auth, uploader.single('thumbnail'), middVerifyProductBody, (req, res) => {
     const maxId = Math.max(...products.map(element => +element.id));
     const newProduct = { id: maxId + 1, title: req.body.title, description: req.body.description, code: req.body.code, price: parseFloat(req.body.price), status: true, stock: parseInt(req.body.stock), category: req.body.category };
     products.push(newProduct);
