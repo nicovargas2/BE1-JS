@@ -43,7 +43,13 @@ function saveProducts() {
 }
 
 router.get('/', middleWareEndpointLevel, (req, res) => {
-    res.status(200).send({ error: null, data: products })
+    if (req.query.limit) {
+        const newArray = products.slice(0, req.query.limit)
+        res.status(200).send({ error: null, data: newArray })
+    }
+    else {
+        res.status(200).send({ error: null, data: products })
+    }
 })
 
 router.get('/:pid', (req, res) => {
