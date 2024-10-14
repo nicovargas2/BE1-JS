@@ -14,14 +14,23 @@
 </div>
 
 
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
     const socketClient = io();
     socketClient.on('new_product_arrived', data => {
-        console.log(data);
+
+        Toastify({
+            text: "New product arrived!",
+            className: "info",
+            style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+            }
+        }).showToast();
+
+        //console.log(data);
         tableProds = document.getElementById("productstable");
-        console.log(tableProds);
+        //console.log(tableProds);
         var tr = document.createElement('tr');
         var td1 = document.createElement('td');
         var td2 = document.createElement('td');

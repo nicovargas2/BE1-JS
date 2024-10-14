@@ -33,8 +33,6 @@ socketServer.on('connection', socket => {
     })
 
     socket.emit('welcome', 'Bienvenido cliente nuevo!')
-
-    socket.emit('new_product', data => { })
 })
 
 
