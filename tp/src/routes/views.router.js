@@ -1,16 +1,13 @@
 import { Router } from "express";
+import { ioproducts } from "../utils/ioproducts.js";
 
 const router = Router();
 
-const products = [
-    { id: 1, title: "arroz", description: "largo fino", code: "abcd1", price: 101.54, stock: 93, category: "No perecedero" },
-    { id: 2, title: "polenta", description: "comun", code: "abcd2", price: 121.15, stock: 43, category: "No perecedero" },
-    { id: 3, title: "fideo", description: "moñito", code: "ajnh3", price: 122.35, stock: 3, category: "No perecedero" },
-    { id: 4, title: "leche", description: "Descremada", code: "aoki2", price: 99.78, stock: 54, category: "Perecedero" },
-    { id: 5, title: "pan", description: "pan de salvado con semillas", code: "qd12e", price: 154.5, stock: 23, category: "Perecedero" },
-]
+const my_ioproducts = new ioproducts()
+my_ioproducts.init();
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+    const products = await my_ioproducts.getProducts()
     let data = {
         fName: "Hilda",
         lName: "Roldan",
@@ -19,6 +16,23 @@ router.get('/', (req, res) => {
         products
     };
     res.status(200).render('home', data);
+})
+
+router.get('/chat', (req, res) => {
+    const data = {
+    };
+    res.status(200).render('chat', data);
+})
+
+router.get('/realTimeProducts', async (req, res) => {
+    const products = await my_ioproducts.getProducts()
+    let data = {
+        fName: "Hilda",
+        lName: "Roldan",
+        isAdmin: true,
+        products
+    };
+    res.status(200).render('realTimeProducts', data);
 })
 
 export default router;

@@ -10,9 +10,9 @@ export class iocarts {
     async init() {
         try {
             const exists = await fs.promises.access(this.file);
-            console.log('El archivo existe');
+            //console.log('El archivo existe');
         } catch (err) {
-            console.log('El archivo NO existe');
+            //console.log('El archivo NO existe');
             await fs.promises.writeFile(this.file, JSON.stringify([]));
         }
     }
@@ -34,7 +34,6 @@ export class iocarts {
             const cartsJSON = JSON.parse(cartsRetrieved)
             return cartsJSON
         } catch (error) {
-            console.log("pasa por el error")
             const array = []
             return array
         }
@@ -45,5 +44,3 @@ export class iocarts {
         return this.retrieveCarts();
     }
 }
-
-//export default iocarts;

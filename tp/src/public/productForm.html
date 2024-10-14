@@ -8,6 +8,8 @@
 </head>
 
 <body>
+    <a href="http://localhost:8080/views/">Home</a>
+    <br><br>
     <h1><u>Crear producto</u></h1>
     <form action="/api/products" method="post" enctype="multipart/form-data">
         <input type="text" name="title" id="title" placeholder="title">
@@ -22,7 +24,9 @@
         <br>
         <input type="text" name="category" id="category" placeholder="category">
         <br>
+        <br>
         <input type="file" id="thumbnail" name="thumbnail">
+        <br />
         <br />
         <button type="submit">Enviar</button>
     </form>

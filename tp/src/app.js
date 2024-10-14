@@ -4,9 +4,39 @@ import cartsRouter from './routes/carts.router.js';
 import viewsRouter from './routes/views.router.js';
 import config from './config.js';
 import handlebars from 'express-handlebars';
-
+import { Server } from 'socket.io';
+import moment from 'moment';
 
 const app = express()
+
+//Este es mi servidor http, pero lo voy a cargar a una constante para poder trabajarlo con websockets
+const httpServer = app.listen(config.PORT, () => {
+    console.log(`Server running using port: ${config.PORT}`)
+});
+
+// Se lo paso como referencia al Server() y esto me permite generar una instancia de un servidor websocket
+// enlazado con mi http. Son complementarios. Puertos y etc no se configura, se hace automatico con lo que ya tiene.
+const socketServer = new Server(httpServer)
+app.set('socketServer', socketServer);
+
+//Esto es como un listener (similar addEventListener).
+//esto escucha nuevas conexiones.
+socketServer.on('connection', socket => {
+    //console.log(socket)
+    const CURRENT_DATE = moment().toString();
+    console.log('Nuevo cliente conectado | ' + CURRENT_DATE)
+    console.log("socket id: " + socket.id)
+
+    socket.on('init_message', data => {
+        console.log(data);
+        console.log("Rugio la bestia en medio de la avenida!");
+    })
+
+    socket.emit('welcome', 'Bienvenido cliente nuevo!')
+
+    socket.emit('new_product', data => { })
+})
+
 
 //el next() es propio de express, ya se encarga de inyectarlo.
 const midd1 = (req, res, next) => {
@@ -34,7 +64,3 @@ app.use('/api/carts', cartsRouter);
 app.use('/views', viewsRouter);
 
 
-
-app.listen(config.PORT, () => {
-    console.log(`Server running using port: ${config.PORT}`)
-});
