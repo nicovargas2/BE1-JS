@@ -7,10 +7,16 @@
     <title>{{title}}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/css/index.css">
+    <!--    <link rel="stylesheet" href="/static/css/index.css"> -->
 </head>
 
 <body>
+    <nav>
+        <a href="http://localhost:8080/views/">Home</a> |
+        <a href="http://localhost:8080/static/load">Load new product</a> |
+        <a href="http://localhost:8080/views/chat">Chat</a> |
+        <a href="http://localhost:8080/views/realTimeProducts">Real Time Prods</a>
+    </nav>
     <div class="container-fluid" style="background-color: #333; color: #fff; padding: 1em;">
         {{{body}}}
     </div>

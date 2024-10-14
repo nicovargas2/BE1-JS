@@ -30,9 +30,7 @@ router.post('/', async (req, res) => {
 
     if (req.body.hasOwnProperty('products')) {
         let maxId = 0
-        if (carts.length == 0) {
-            maxId = 0
-        } else {
+        if (carts.length > 0) {
             maxId = Math.max(...carts.map(element => +element.id));
         }
         const newCart = { id: maxId + 1, products: req.body.products };
